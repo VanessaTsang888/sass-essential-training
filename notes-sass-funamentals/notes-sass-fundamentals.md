@@ -63,3 +63,36 @@ Both are the same. The h1 will be yellow as we are redefining the variable to be
 Nesting:
 
 SASS allows us to place rules inside of other rules. This is known as nesting.
+
+Partilas:
+Summary:
+1. start with an underscore _
+2. @use copies code - create a reference to other partials e.g. _variables.scss with this property.
+3. Namespaced variables.
+4. Use as shortcut, e.g.  @use "variables" as var;
+Snippects of code that can be easily imported into other files. We can create different files with different pieces of our code:
+
+// _variables.scss
+$bg: #ead2a8;
+$primary: SlateBlue;
+
+All the basic code that we set up our page with. A simple body slector with bg property and the bg colour:
+ // _base.scss
+ @use "variables";
+ body {
+     background: variables.$bg;
+     ...
+ }
+
+ In the styl.scss file we can create references to those other partials by working with the @use parameter and then typing it in the of the file we want to import. We don't have to put the underscore/extension here. This file will output this file to style.css file.
+
+ // style.scss
+ @use "variables" as var;
+ @use "base";
+ h1 {
+     color: var.$primary;
+ }
+
+2:23
+
+
