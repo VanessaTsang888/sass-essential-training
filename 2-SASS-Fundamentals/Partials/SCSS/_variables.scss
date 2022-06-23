@@ -3,11 +3,13 @@
 Partilas:
 Another key feature in sass is the ability to create separate files with snippets of code that can easily imported into other files.
 These are known as Partilas. We create partials to help us organise things a lot better than we can in CSS.
-We can create different files with different pieces of your code. So we can have a file _variables.scss and this can contain our basic 
-    variables:
-    _variables.scss
-        $bg: #ead2a8;
-        $primary: SlateBlue;
+We can create different files with different pieces of your code. We start the name of a partial with a underscore. then on the file
+that refers to that partial, we can create a reference with the @use property. We can namespace our variables, e.g. when we are referring to
+the background color, we are using the variables keyword to refernce as a namespace for all the variables inside that file::after   background: variables.$bg 
+
+
+We can also use the keyword 'as' to create a shortcut if we don't like to put in the entire name variables: 
+    @use "variables" as var;
 
 *********************************************************************************************************************************************/
 

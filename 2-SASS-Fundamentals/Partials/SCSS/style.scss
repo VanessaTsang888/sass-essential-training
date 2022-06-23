@@ -1,6 +1,16 @@
+/*****************************************************************************************************************
+    Calling the file called base, importing, pasting that file in here.
+    So we are making references to other partials by working with the use parameter and 
+    then typing it in the name of the file that we want to import, e.g. variables
+    Notice that we don't need to write the underscore (this is just for the parser so it knows 
+    its a file and not to cnvert to other css file) and the extension at the end.
+    This file will be auto converted into style.css file when SASS outputs the final files, but other file
+    with the underscore at the start of their file name will NOT be generated as separate .css files.
+
+***********************************************************************************************************************/
 
 // Shorthand: name spacing variables as var.
-// Calling the file called base, importing, pasting that file in here.
+
 @use "variables" as var;
 @use "base";
 
