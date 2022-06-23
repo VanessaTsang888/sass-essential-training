@@ -1,0 +1,37 @@
+/***************************************************************************************************
+  SASS allows us to place rules inside of other rules. This is known as nesting. Makes organising 
+  complex rules a lot easier. One of the best features in SASS.
+
+  Nesting combines rules and helps us organise things better.
+  Becareful as a lot of nesting will create a lot of extra css which can get complex.
+  Since SASS is compiled, this means the css will take longer to generate - Bandwidth.
+  so try to keep our rules as simple as possible.
+
+  Summary:
+  1. combines rules.
+  2. Extra CSS.
+  3. Bandwidth.
+
+*********************************************************************************************************/
+// The margin bottom will make sure we don't have any extra space between the heading 1 and the paragraph text.
+
+h1 {
+    color: yellow;
+    margin-bottom: 0;
+  }
+  
+  // We have some css nested inside the box class and inside of that we have h1 and a paragraph with a margin of 0,
+  // as well as a new colour for the headline of red.
+  .box {
+    padding: 1em 2em;
+    background: beige;
+    color: black;
+    h1,
+    p {
+      margin: 0;
+    }
+    h1 {
+      color: red;
+    }
+  }
+  

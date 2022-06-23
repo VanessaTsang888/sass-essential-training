@@ -1,0 +1,10 @@
+
+// Shorthand: name spacing variables as var.
+// Calling the file called base, importing, pasting that file in here.
+@use "variables" as var;
+@use "base";
+
+//  Referring to a variable inside of the variables file and that variable is called: primary.
+h1 {
+    color: var.$parimary;
+}

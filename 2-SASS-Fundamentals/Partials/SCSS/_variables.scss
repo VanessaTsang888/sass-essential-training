@@ -1,0 +1,17 @@
+/********************************************************************************************************************************************
+
+Partilas:
+Another key feature in sass is the ability to create separate files with snippets of code that can easily imported into other files.
+These are known as Partilas. We create partials to help us organise things a lot better than we can in CSS.
+We can create different files with different pieces of your code. So we can have a file _variables.scss and this can contain our basic 
+    variables:
+    _variables.scss
+        $bg: #ead2a8;
+        $primary: SlateBlue;
+
+*********************************************************************************************************************************************/
+
+// Declaring two variables. One called bg and another called SlateBlue with the value of SlateBlue.
+
+$bg: #ead2a8;
+$parimary: SlateBlue;

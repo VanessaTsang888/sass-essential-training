@@ -1,0 +1,54 @@
+/*******************************
+
+USING VARIABLES
+
+********************************/
+
+// Variables normally have a gloal scope so we can define them once at the top of our styles (e.g. $primary-color) and they'll be available everywhere.
+$primary-color: red;
+
+// Can also create variables inside braces and they become local variables (e.g. inside of h1).
+// Local variables can have the same name as global variables and this is known as 'shadowing'.
+// Since the color red is defined globally, the paragraph tag style is using that style.
+h1 {
+  $primary-color: yellow;
+  color: $primary-color;
+}
+
+p {
+  color: $primary-color;
+}
+
+/* 
+We are redefining the value of the primary color -> to yellow. This is know as redefines globals. Now everythng including the paragraph gets the yellow color.
+We can redfine a global variable by using the global flag at end of a definition: !global
+Not for new vars. Can only redfine on existing variables. 
+*/
+
+
+$primary-color: red;
+
+h1 {
+  $primary-color: yellow !global;
+  color: $primary-color;
+}
+
+p {
+  color: $primary-color;
+}
+
+/*
+Underscores Vs Hyphens:
+In variable names: underscores are the same as hyphens. 
+The h1 will be yellow as we are redefining the variable to be yellow eventhough the style in the body of the h1
+is hyphenated rather than using a underscore because the latest declaration is the variable that has the yellow
+stored inside it. So The variable gets redifined as yellow so we need to be careful of this behaviour.
+
+*/
+
+$primary-color: red;
+$primary_color: yellow;
+
+h1 {
+  color: $primary-color;
+}
