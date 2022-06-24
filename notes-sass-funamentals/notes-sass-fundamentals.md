@@ -155,6 +155,44 @@ Summary:
 4. Use as shortcut, e.g.  @use "variables" as var;
 Snippects of code that can be easily imported into other files. We can create different files with different pieces of our code:
 
+Parent Selector:
+https://codepen.io/planetoftheweb/pen/JjrqpBV?editors=1100
+
+The parent selctor lets us easily work with nested styles to choose the parent of a current class.
+    How It Works:
+        1. to specify we are asking for the parent, we use the ampersand & symbol. Examploe, inside of the btn class, we targeting the hover state of that button class to make the button have a different background color 
+whenever the user roll over it. This creates a style that targets the parent and then adds whatever isto the right of this. It will copy the code from the parent and insert it in this new style. This means I can also use it to create a suffix by using the Ampersand &:
+    &-primary
+
+I can even specify that i want to create another class that has a prefix before it: .container & 
+So in this case I would be looking for a button class that is inside a container class and align things to the right.
+
+    SUMMARY:
+    -> Ampersand &
+    -> Copies parent
+    -> Use as a suffix: &-primary
+    -> Target parent present: .container &
+
+Mixins: 
+https://sass-lang.com/documentation/at-rules/mixin
+
+They allow us to define styles thaat can be re-used through our stylesheets. They make it easy to avoid using non-semantic classes like .float-left, and to distribute collections of styles in libraries.
+
+They are defined using the @mixin at-rule, which is written @mixin <name> {...}
+
+They are similar to Javascript functions but does not return anything and can not be assigned to variables. 
+
+Start by adding a @mixin.
+
+A mixin's name can be any sass identifier and it can contain any statement other than top-level statements. they can be used to encapsulate styles that can be dropped into a single style rule; they can contain style rules of their own that can be nested in other rules or included at the top level of the stylesheet; or they6 can just serve to modify variables.
+
+They are included into the current context using the @include at-rule, which is written @include <name> @include <name> (<arguments...>), with the name of the mixin being included.
+
+Summary:
+1. Create with @mixin
+2. Pass arguments (can pass multiple arguments as we need, using commas)
+3. Set defaults (arguments -> can pass default value)
+4. Use @include rule (to use a mixin and the name of the mixin)
 
 
 

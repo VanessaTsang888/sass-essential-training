@@ -1,0 +1,32 @@
+/* 
+We have x2 buttons inside of a container.
+The container class is going to float the buttons to the right.
+Without the container class the buttons will align to the left.
+
+*/
+
+.btn {
+    border: 0;
+    border-radius: 5px;
+    background: #444;
+    font-size: 1rem;
+    color: white;
+    padding: 0.7rem 0.9rem;
+    margin: 0.5em auto;
+    display: inline-block;
+    cursor: pointer;
+  
+    &:hover {
+      background: #800;
+    }
+  
+    &-primary {
+      background: #3ab5e9;
+    }
+  
+    .container & {
+      float: right;
+      margin-left: 0.5em;
+    }
+  }
+  

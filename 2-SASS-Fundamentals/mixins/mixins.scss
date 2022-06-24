@@ -1,0 +1,61 @@
+/***************************************************************************************************************************
+
+To style the two buttons that the content of them is in the mixins.html file, we create additional classes as below.
+Also, we now use the @inlcude rule with the name of the mixin and pass in a different value (without the name of the value).
+If we need to pass in multiple arguments then should write the name of the value (variable name) as well as the actual value.
+The values will be used in sequence. 
+
+**********************************************************************************************************************************/
+
+
+@mixin btn($col: #444) {
+    border: 0;
+    border-radius: 5px;
+    background: $col;
+    font-size: 1rem;
+    color: white;
+    padding: 0.7rem 0.9rem;
+    margin: 0.5em auto;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .btn {
+    @include btn;
+  }
+  
+  .btn-primary {
+    @include btn(#3ab5e9);
+    color: yellow;
+  }
+
+  /* 
+  
+  Example from the SASS official docs:
+  https://sass-lang.com/documentation/at-rules/mixin
+
+  */
+
+  @mixin reset-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  @mixin horizontal-list {
+    @include reset-list;
+  
+    li {
+      display: inline-block;
+      margin: {
+        left: -2px;
+        right: 2em;
+      }
+    }
+  }
+  
+// Using the mixin at-rule on same scss file to style the navigation and unordered list elements
+  nav ul {
+    @include horizontal-list;
+  }
+  
