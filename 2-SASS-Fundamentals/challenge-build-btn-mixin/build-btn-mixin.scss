@@ -1,0 +1,79 @@
+// Starter code: https://codepen.io/planetoftheweb/pen/Yzrbvpo?editors=1100
+
+.msg {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #888;
+    font-size: 1rem;
+    color: white;
+    padding: 1rem 1.25rem;
+    margin: 1em 0;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .msg h1 {
+    margin: 0 0 0.2em 0;
+  }
+
+/*   
+
+My solution code.
+
+1. Edit the msg class to use the @mixin keyword: @mixin msg
+2. For the argument add a variable (col = color) and a default value of 888: $col:#888
+3. Use a parent selector so when user hover over elements the bg color changes.
+4. Modify the headline a little -> put the existing h1 inside of the mixin but within a
+nested class. Reduce the font size a little. 
+5. Write a message class that has the @include msg directive. 
+6. Now do something for the info -> take advantage of parent selector and do it directly under the @include directive.
+So use this special selector to create the Info box but to have a different bg color.
+Create another parent selector targeting hover effect of this info class and change the bg color.
+So we are using the special parent selector as much as possible to bring in variants. This way everything remains very
+organised in a single sort of parent class.
+
+*/
+@mixin msg($col: #888) {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #888;
+    font-size: 1rem;
+    color: white;
+    padding: 1rem 1.25rem;
+    margin: 1em 0;
+    display: inline-block;
+    cursor: pointer;
+// using the special parent selector for hover effect.
+    &:hover {
+        background: #555;
+    }
+
+    .msg h1 {
+        margin: 0 0 0.2em 0;
+        font-size: 2.5em;
+      }
+  }
+//   The message class using the special parent selector twice
+
+.msg {
+    @include msg;
+    // use parent selector and create another message box but called Info and will have a different bg color.
+    &-info {
+        background: #33a2a2;
+        // Another parent selector to target the hover effect of this info class and change the bg color.
+        &:hover {
+            background: #1a5353;
+        }
+    }
+}
+
+/* 
+
+Summary:
+Using the above different keywords can help us create different verisons of the same thing.
+We do this kind of these in css often but with sass we can do it in a more organised and effient
+way. We can collapse blocks of code when we need to so we can work with our code in a more effient
+manner.
+
+*/
+  

@@ -192,7 +192,49 @@ Summary:
 1. Create with @mixin
 2. Pass arguments (can pass multiple arguments as we need, using commas)
 3. Set defaults (arguments -> can pass default value)
-4. Use @include rule (to use a mixin and the name of the mixin)
+4. Use @include rule (to use a mixin and the name of the mixin).
 
+Fun fact:
+Mixin names, like all Sass identifiers, treat hyphens and underscores as identical. This means that reset-list and reset_list both refer to the same mixin. This is a historical holdover from the very early days of Sass, when it only allowed underscores in identifier names. Once Sass added support for hyphens to match CSS’s syntax, the two were made equivalent to make migration easier.
+
+@extend
+Official docs: https://sass-lang.com/documentation/at-rules/extend
+
+There are often cases when designing a page when one class should have all the styles of another class, as well as its own specific styles. For example, the BEM methodology encourages modifier classes that go on the same elements as block or element classes. But this can create cluttered HTML, it's prone to errors from forgetting to include both classes, and it can bring non-semantic style concerns into your markup.
+
+<!-- HTML:
+<div class="error error--serious">
+  Oh no! You've been hacked!
+</div>
+
+ -->
+
+<!--  CSS:
+.error {
+  border: 1px #f00;
+  background-color: #fdd;
+}
+
+.error--serious {
+  border-width: 3px;
+}
+
+-->
+
+Sass’s @extend rule solves this. It’s written @extend <selector>, and it tells Sass that one selector should inherit the styles of another.
+
+<!-- SCSS:
+
+.error {
+  border: 1px #f00;
+  background-color: #fdd;
+
+  &--serious {
+    @extend .error;
+    border-width: 3px;
+  }
+}
+
+ -->
 
 
