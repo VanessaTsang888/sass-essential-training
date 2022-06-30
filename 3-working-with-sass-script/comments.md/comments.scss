@@ -1,0 +1,21 @@
+/********************************************************* 
+COMMENTS
+
+SASS comments have some interesting features. Here are some samples of what we can do with SASS comment.
+
+ -- Summary --
+- Can use CSS Comments;
+- JavaScript Unpublished;
+- Force Publish Compressed;
+- Interpolation OK.
+
+*********************************************************/
+
+/* Regular CSS -- Published */
+/* Multi Line
+    Comments -- Published */
+// JavaScript Style -- Unpublished
+/*! Force publish this one */
+
+$color: #3ab5e9;
+/* Interpolate: #{$color} */

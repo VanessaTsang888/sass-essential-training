@@ -1,0 +1,17 @@
+/************************************************************************************************************************ 
+
+COMMENTS 
+
+This is the compiled into css. You can see all the different types of comments show up but the Javascript comment.
+    // JavaScript Style -- Unpublished
+
+If we output things in compressed mode, the only comment we would see would be the forced published one.
+The interpolation comment works well by showing up that variable value.
+
+************************************************************************************************************************/
+
+/* Regular CSS -- Published */
+/* Multi Line
+    Comments -- Published */
+/*! Force publish this one */
+/* Interpolate: #3ab5e9 */
