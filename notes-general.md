@@ -3,5 +3,3 @@ click on the main branch dropdown to get to either the first chapters and second
 
 The course slides and practice files are available on CodePen: http://raybo.org/slides_sassesst/#/ -> slid show with all links to the course.
 
-
-24-06-2022: continue from Interpolation -> 1:45

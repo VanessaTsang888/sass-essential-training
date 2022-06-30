@@ -1,0 +1,32 @@
+/* 
+
+PLACEHOLDER SELECTOR 
+Below css is complied from the scss syntax.
+It took both the classes, analysed them, looked at what was the same and put 
+all those thingss under the same class names. Then under the extension it created
+separate rule for the two different background colors. Therefore, this is for places
+where we don't want to create original rule and we just want to extend it and NOT
+create that additional class.
+
+
+*/
+
+.btn-secondary, .btn-primary {
+    border: 0;
+    border-radius: 5px;
+    background: #444;
+    font-size: 1rem;
+    color: white;
+    padding: 0.7rem 0.9rem;
+    margin: 0.5em auto;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .btn-primary {
+    background: #3ab5e9;
+  }
+  
+  .btn-secondary {
+    background: orange;
+  }

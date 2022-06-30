@@ -1,0 +1,41 @@
+/* 
+
+PLACEHOLDER SELECTOR
+Sometimes we may want to create a class that is not something that we want to complie, but only something we want to extend.
+In this case we can use Placeholder Selectors. 
+
+They look like any other class definitin, but they begin with a percentage sign instead. Then add the name of the class:   
+     %btn
+When you want to extend the class, you use the @extend at-rule and then the name of the placeholder:
+    @extend %btn;
+This allows us to create the button primary and the button secondary, but not have a btn class by itself.
+
+This is for places where we don't want to create original rule and we just want to extend it and NOT
+create that additional class.
+
+*/
+
+// Will not compile
+%btn {
+    border: 0;
+    border-radius: 5px;
+    background: #444;
+    font-size: 1rem;
+    color: white;
+    padding: 0.7rem 0.9rem;
+    margin: 0.5em auto;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+// Extend the above styles for button primary
+// Do the same for button secondary.  
+  .btn-primary {
+    @extend %btn;
+    background: #3ab5e9;
+  }
+  .btn-secondary {
+    @extend %btn;
+    background: orange;
+  }
+  
