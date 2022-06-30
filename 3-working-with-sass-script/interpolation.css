@@ -1,0 +1,33 @@
+/* 
+
+Complied CSS.
+
+We can see that our scss syntax complied has created both the btn and the btn-primary classes for us
+with the proper values for each one of our buttons.
+Now we can see how interpolation is useful in SASS.
+
+*/
+
+.btn {
+    border: 0;
+    border-radius: 5px;
+    background: #444;
+    font-size: 1rem;
+    color: white;
+    padding: 0.7rem 0.9rem;
+    margin: 0.5em auto;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .btn-primary {
+    border: 0;
+    border-radius: 5px;
+    background: #3ab5e9;
+    font-size: 1rem;
+    color: white;
+    padding: 0.7rem 0.9rem;
+    margin: 0.5em auto;
+    display: inline-block;
+    cursor: pointer;
+  }

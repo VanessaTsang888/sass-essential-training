@@ -1,0 +1,47 @@
+/************************************************************** 
+Interpolation.
+
+Using interpolation to determin the name of the button
+
+    .btn#{$name} { 
+*********************************************************************/
+
+/*
+we are creating a mixin with multiple parameters.
+
+We have a mixin named btn and we are passing multiple arguments into it.
+We are using interpolation to determin the name of the button that has a
+class of .btn 
+
+*/
+
+@mixin btn($name: "", $bg: #444, $col: white) {
+    .btn#{$name} { 
+      border: 0;
+      border-radius: 5px;
+      background: $bg;
+      font-size: 1rem;
+      color: $col;
+      padding: 0.7rem 0.9rem;
+      margin: 0.5em auto;
+      display: inline-block;
+      cursor: pointer;
+    }
+  }
+
+/* 
+
+Creating the btn as well as the btn-primary classes.
+
+We can call this just with the include btn command or directive and create
+a button with whatever properties is inside of the body of the .btn that is
+inside of a set of braces. 
+
+Call btn and pass along -primary which will be converted to btn-primary
+Passing along the background color which is a blue
+
+*/
+
+  @include btn;
+  @include btn("-primary", #3ab5e9);
+  
