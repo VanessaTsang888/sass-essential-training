@@ -1,0 +1,30 @@
+/* We can use lists to create an Array type object that helps iterate through a group of items easily. */
+
+// Creating an array and storing it into the variable named: $myArray, and we have different pieces of 
+// text here which will go into each one of the items automatically but since we have an item that needs
+// needs to have a space in it, we are quoting that by wrapping it with a pair of double quotes.
+// We can output the array using the nth() method -> return the first element from the array using interpolation.
+
+$myArray: primary secondary warning "item info";
+/* #{nth($myArray, 1)} */
+
+// As above but we are using commas instead of spaces, and this still works fine.
+// Will return the second element from the array.
+$myArray: primary, secondary, warning, "item info";
+/* #{nth($myArray, 2)} */
+
+// As above but we wrap all elements with a pair of parenthesis.
+//  output element three
+$myArray: (primary, secondary, warning, "item info");
+/* #{nth($myArray, 3)} */
+
+// As above but we wrap all elements in a piar of brackets rather than parenthesis.
+// Output element four
+$myArray: [primary, secondary, warning, "item info" ];
+/* #{nth($myArray, 4)} */
+
+// Output -1. We are using negative indexes -> go to the end of the array and give us the last item in that array.
+// This is useful if we need to know what the last element in an array is.
+$myArray: [primary, secondary, warning, "item info" ];
+/* #{nth($myArray, -1)} */
+

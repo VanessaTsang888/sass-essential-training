@@ -1,0 +1,15 @@
+/*  
+
+SCSS lists Compiled CSS 
+
+We are using interpolation to return certain elements or item from a list.
+The name of a list starts with a dollar symbol which we use to write a variable name.
+We are using index to find specific element in a list.
+
+*/
+
+/* primary */
+/* secondary */
+/* warning */
+/* item info */
+/* item info */
