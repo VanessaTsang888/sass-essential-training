@@ -1,0 +1,52 @@
+/* 
+
+@each at-rule or statement also know as a directive.
+
+Using the @each statement is a much simpler way to create a series of elements by feeding items from a list, 
+destructuring it, and passing it along into an include statement.
+
+*/
+
+// Create a button named: btn and pass-in three arguments. An empty String, a background color of gray, 
+// a text color of white.
+// Inside the body we are styling the btn element using the class name of .btn with the help of Interpolation. 
+// which is a variable name.
+@mixin btn($name: "", $bg: #444, $col: white) {
+    .btn#{$name} {
+      border: 0;
+      border-radius: 5px;
+      background: $bg;
+      font-size: 1rem;
+      color: $col;
+      padding: 0.7rem 0.9rem;
+      margin: 0.5em auto;
+      display: inline-block;
+      cursor: pointer;
+    }
+  }
+
+// Create two a lists inside of a list: inside of the buttons list we have the primary list and 
+// two elements which are two different colors. Then the same with the secondary list.
+// The empty Sting will generate 'btn'. Then we pass along a btn -primary class, then a color for the background
+// then a color for the text.
+  
+  $buttons: "", -primary #3ab5e9 hotpink, -secondary green yellow;
+
+/* 
+    Call with the @each at-rule and destructure the data that we are inputting from the each one of the lists 
+    (primary, secondary lists). So we taking each value from a list and storing it in each of the varialbes or 
+    data we need to destructure.
+    When we do that, then we create one of those variables as we loop through each of the elements in our button 
+    lists (primary, secondary lists).
+    Then we use or include the mixin btn and pass in the value for each one of those, e.g. an empty String, the 
+    background color and the text color of white.
+*/
+  
+// Destructure these three data from the primary and secondary lists. So take wach value from the each lists
+// and sort it. We do this as we loop through each item within each list.
+// Then we use the @include to call the btn mixin and pass in the value for each of those variables, e.g. empty 
+// String, background color of greay, text color of white.
+  @each $name, $bg, $col in $buttons {
+    @include btn($name, $bg, $col);
+  }
+  

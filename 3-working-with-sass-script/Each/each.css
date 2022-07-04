@@ -1,0 +1,42 @@
+/* 
+
+@each at-rule: 
+
+Compiled code from the scss file.
+We have a btn class, a btn-primary class and a btn-secondary.
+
+*/
+
+.btn {
+    border: 0;
+    border-radius: 5px;
+    font-size: 1rem;
+    padding: 0.7rem 0.9rem;
+    margin: 0.5em auto;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .btn-primary {
+    border: 0;
+    border-radius: 5px;
+    background: #3ab5e9;
+    font-size: 1rem;
+    color: hotpink;
+    padding: 0.7rem 0.9rem;
+    margin: 0.5em auto;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .btn-secondary {
+    border: 0;
+    border-radius: 5px;
+    background: green;
+    font-size: 1rem;
+    color: yellow;
+    padding: 0.7rem 0.9rem;
+    margin: 0.5em auto;
+    display: inline-block;
+    cursor: pointer;
+  }
