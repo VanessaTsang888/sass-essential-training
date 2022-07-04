@@ -1,0 +1,33 @@
+/*
+
+The @for at-rule
+Use to iterate a series of numbers. In JavascripttThis is sometime known as a 
+for-loop.
+
+- Count either up or down
+- The Format:
+    @for <var> to | through <expression> {...}
+
+*/
+
+// Create a list with all of these sizes for the headlines specified as arguments.
+
+$font-size: (3rem, 2.5rem, 2rem);
+
+// Using the at-rule to iterate through a temporary variable which will go through 
+// the entire length of the list.
+// Then execute the code within the body of this rule. In this case we are using interpolation 
+// to return the values or data that is stored in the $i variable.
+// Then set the font size by using the value from each of the fields - above arguments passed into the
+// $font-size variable.
+// So whenever we have a numeric numbers we want to use, the @for at-rule is useful. 
+// Its more flexible to use this for-loop
+@for $i from 1 through length($font-size) {
+  h#{$i} {
+    font-size: nth($font-size, $i);
+  }
+}
+
+
+
+
