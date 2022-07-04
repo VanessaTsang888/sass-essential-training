@@ -1,0 +1,18 @@
+/*  Compiled from list-methods.scss */
+
+
+/* length: 3 */
+/* nth: secondary */
+/* set-nth: primary, dark, warning */
+
+/* Orange is index 2 */
+/* index: 2 */
+/* append: primary, secondary, warning, danger */
+/* join: primary secondary warning red orange cyan */
+/* zip: primary red, secondary orange, warning cyan */
+
+/*  Yes we do have a bracket in our list */
+/* is-bracketed: true */
+
+/*  We are using comma to separate our lists */
+/* list-separator: comma */

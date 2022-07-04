@@ -1,14 +1,32 @@
-// List Methods
+/* 
 
+List Methods
 
+    What out for the immutability as most of us get caught out on it.
+    Also everyting in lists are indexed one.
+
+*/
+
+// Two lists and a warning piece of text or an element.
 $myList1: primary, secondary, warning;
+// A different type of list which is using brackets with 3 elements.
 $myList2: [red, orange, cyan];
 /* length: #{length($myList1)} */
 /* nth: #{nth($myList1, 2)} */
 /* set-nth: #{set-nth($myList1, 2, dark)} */
+
+// Get the index for orange which is 2.
 /* index: #{index($myList2, orange)} */
+
+// Append this list and the element danger and separate them using comma's.
 /* append: #{append($myList1, danger, comma)} */
+
+// Join lists and elements together using space between each item.
 /* join: #{join($myList1, $myList2, space)} */
 /* zip: #{zip($myList1, $myList2)} */
+
+// Check to see if we are using a bracket/
 /* is-bracketed: #{is-bracketed($myList2)} */
+
+// To find out what we are using to separate our list -> the comma separator.
 /* list-separator: #{list-separator($myList2)} */
