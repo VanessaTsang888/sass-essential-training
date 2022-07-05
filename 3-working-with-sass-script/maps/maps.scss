@@ -1,0 +1,62 @@
+// maps lecture.
+
+@use "sass:map";
+
+$colorList: (
+  "primary": RoyalBlue,
+  "secondary": Tomato,
+  "accent": YellowGreen
+);
+
+/* #{map.get($colorList, "primary")} */ ;
+
+// This is an example of map with three different colours.
+
+/* 
+EXAMPLE of a map. 
+Inside buttons we have two sets of items, each has a key that in this 
+case is going to be the name of our buttons, e.g. primary and secondary.
+For each key we have a series of values.  
+
+*/
+
+// To import the map module.
+@use "sass:map";
+// This is the map itself.
+$buttons: (
+  "-primary": (
+    RoyalBlue,
+    #3ab5e9
+  ),
+  "-secondary": (
+    green,
+    yellow
+  )
+);
+
+@mixin btn($name: "", $bg: #444, $col: white) {
+  .btn#{$name} {
+    border: 0;
+    border-radius: 5px;
+    background: $bg;
+    font-size: 1rem;
+    color: $col;
+    padding: 0.7rem 0.9rem;
+    margin: 0.5em auto;
+    display: inline-block;
+    cursor: pointer;
+  }
+}
+
+// Go through list of keys and values within the buttons map.
+// In the body we are creating the button by first inclduing the key, e.g. the name of the button -> primary.
+//  then we add along the values -> the second argument in @include
+// The values are going to map to each one of the variables in our mixins.
+//  The result is that we've created a series of three buttons of different colors and words with all the properties we need.
+@include btn("");
+@each $key, $values in $buttons {
+  @include btn($key, $values...);
+}
+
+
+

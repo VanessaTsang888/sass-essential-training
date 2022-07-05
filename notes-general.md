@@ -15,3 +15,9 @@ click on the main branch dropdown to get to either the first chapters and second
 
 Slid show with all links to the course.
 
+[The SASS official docs](https://sass-lang.com/)
+
+### Progress
+
+Continue from Operators and Conditionals
+
