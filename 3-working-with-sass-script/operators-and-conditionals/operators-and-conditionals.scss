@@ -1,0 +1,34 @@
+/* Operators and conditionals lecture.
+
+We are using the same mixin that we were using except we have added an additional value,
+where we can set the oval parameter to either true or false at the end within the @include
+at-rule. We pass in false for oval as an argument into mixin btn so then we can use an if statement,
+
+*/
+
+// If the oval variable is set to true then give it a border-radius of 50%. Otherwise give it 5px for
+// the same property.
+@mixin btn($name: "", $bg: #444, $col: white, $oval: false) {
+    .btn#{$name} {
+      border: 0;
+      @if $oval {
+        border-radius: 50%;
+      } @else {
+        border-radius: 5px;
+      }
+      background: $bg;
+      font-size: 1rem;
+      color: $col;
+      padding: 0.7rem 0.9rem;
+      margin: 0.5em auto;
+      display: inline-block;
+      cursor: pointer;
+    }
+  }
+// Set oval to true or false. We can do this as we had pre-set the default to false.
+// Crimson is in location two so its changing the background color. Then we go miss out location three which is the 
+// font color and go straight to the Boolean location four.
+  @include btn;
+  @include btn("-primary", #3ab5e9);
+  @include btn("-circle", Crimson, $oval: true); // This -circle is refers to the button element with the btn-circle class.
+  
