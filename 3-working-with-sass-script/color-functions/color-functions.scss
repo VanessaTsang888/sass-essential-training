@@ -1,0 +1,25 @@
+/* 
+
+Color functions lecture
+Ways to modify colours in SASS. This is a feature or concept in SASS for us to modify colors.
+
+
+*/
+
+
+$color: cyan;
+@use "sass:color";
+
+// Adjust the colors
+#{ color.adjust($color, $lightness: -20, $alpha: .4)}
+
+// Transparency based colors. Make a color transparent between 0 - 1. In our case its 0.9.
+ #{transparentize($color, .9)}
+
+/* #{lighten($color, 30)} */
+/* #{darken($color, 30)} */
+
+// Changing the orginal color which is cyan and shifting that by 0.9
+h1 {
+  color: transparentize($color, 0.9);
+}
