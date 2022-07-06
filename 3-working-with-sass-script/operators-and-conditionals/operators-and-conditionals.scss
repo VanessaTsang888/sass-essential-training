@@ -2,12 +2,16 @@
 
 We are using the same mixin that we were using except we have added an additional value,
 where we can set the oval parameter to either true or false at the end within the @include
-at-rule. We pass in false for oval as an argument into mixin btn so then we can use an if statement,
+at-rule. This is the operators part of this lecture. There are other operators but not use
+in the below code example.
+
+We pass in false for oval as an argument into mixin btn so then we can use an if-else statement
+which is the conditional part of this lecture.
 
 */
-
-// If the oval variable is set to true then give it a border-radius of 50%. Otherwise give it 5px for
-// the same property.
+// Code example.
+// Using the4 if-esle at-rules. If the oval variable is set to true then give it a border-radius of 50%.
+//  Otherwise give it 5px for the same property.
 @mixin btn($name: "", $bg: #444, $col: white, $oval: false) {
     .btn#{$name} {
       border: 0;
