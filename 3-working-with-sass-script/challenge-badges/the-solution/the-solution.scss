@@ -18,9 +18,15 @@ Use the each statement to navigate through the maps and create the badge styles.
 
 */
 
+ /* 
+    Import modules so I can use the maps and color function sass features in this challenge to develop 
+    the three buttons on a web page. 
+*/
 @use "sass:map";
-@use "sass:color";
+@use "sass:color"; // use some of the color functions within sass.
 
+// Create a map for badges. This map is named badges hence the variable name: $badges.
+// Map uses key-value pairs. Each class has x2 colors.
 $badges: (
   "-primary": (
     RoyalBlue,
@@ -36,30 +42,46 @@ $badges: (
   )
 );
 
+/* Mixin that receives four arguments and they are variables with a value assigned to each one. 
+ The first one is by default has an empty string assigned to it. Then a background color that is a medium grey color.
+ The last one is a variable with null assigned to it meaning no value exists or absence -> is not a memory location
+ Using interpolation to give the badge a name so later we can just use the value stored in this variable which is a empty String.
+ Using conditional -> if-else statement to evaluate a condition: if the style is pill then execute the styles in the body. Otherwise 
+ use the styles in the else block.
+
+*/ 
 @mixin badge($name: "", $bg: #444, $col: white, $style: null) {
   .badge#{$name} {
     border: 0;
     @if $style == "pill" {
-      border-radius: 30px !important;
-      padding: 0 0.6em !important;
+      border-radius: 30px !important; // rule set to important. This will over-ride anything else including badge-info class.
+      padding: 0 0.6em !important; // Gives it more horizontal padding due to the large amount of boarder-radius
     } @else {
       border-radius: 5px;
       padding: 0 0.3em;
     }
-    background: $bg;
+    background: $bg; // Use the background color we received when we initialise our mixin above -> the second argument.
     font-size: 0.8em;
-    color: $col;
+    color: $col; // Use the color variable we received when we initialise our mixin above -> the third argument -> color of the text.
     margin: 0.1em;
     display: inline-block;
     cursor: pointer;
+    // Hover color - using a parent selector. On hover this change the background using the color.scale() function which will
+    // make the color darker - will remove lightness by -30%.
     &:hover {
       background: color.scale($bg, $lightness: -30%);
     }
   }
 }
 
+// Call our badges using the include at-rule and the class name of 'badge' which is also the name of the mixin.
+// Then pass in empty string. This will just create a badge that uses the default parameters. So any html element with
+// a class of 'badge' will uses those styles.
+// In each interation Loop over each badges within the $badges map above using the each at-rule to pass along the key, 
+// the values thats inside of the map.
+// For each badge pass along the key which is the name of the badge, and all the values for that key.
 @include badge("");
-@include badge("-pill", $style: "pill");
+@include badge("-pill", $style: "pill"); // badge pill class, use the styles for pill that is within the if-block.
 @each $key, $values in $badges {
-  @include badge($key, $values...);
+  @include badge($key, $values...); // We have multple values per key within our map.
 }

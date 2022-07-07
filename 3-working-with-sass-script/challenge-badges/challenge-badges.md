@@ -1,6 +1,7 @@
 # Challenge Badges
 
 The challenge is to create a mixin that will help us generate badges for a website.
+Use a number of the SASS features to complete the challenge.
 
 ## The Problem
 [The Problem](http://raybo.org/slides_sassesst/?d=03_10&#/0/0/3)
@@ -27,3 +28,6 @@ Use the each statement to navigate through the maps and create the badge styles.
 ## The Solution
 If it get block, I can use the solutions video.
 [The Solution](https://codepen.io/planetoftheweb/pen/bGYbgQr?editors=1100)
+
+1. When I roll over a badge, I get a hover state, that hover state gets created by making the colors a little bit darker.
+2. The Javascript button has the pill styles with rounded edges and a little different margins.
