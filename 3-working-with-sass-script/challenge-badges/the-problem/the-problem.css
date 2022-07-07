@@ -1,0 +1,19 @@
+/* 
+
+The starter code for the Badge Challenge. 
+This is the scss code compiled to css code. As you can see it the same as the scss code.
+
+*/
+
+/* This is one of the class name within the span elements in the HTML file. */
+.badge {
+    border: 0;
+    border-radius: 5px;
+    padding: 0 0.3em;
+    background: #444;
+    font-size: 0.8em;
+    color: white;
+    margin: 0.1em;
+    display: inline-block;
+    cursor: pointer;
+  }

@@ -1,0 +1,20 @@
+/*
+
+    The starter code for the badges challenge. See the problem or task 
+    in the challenge-badges.md file.
+
+*/
+
+// The basic styles for the x3 badges and the content is in the HTML file.
+
+.badge {
+    border: 0;
+    border-radius: 5px;
+    padding: 0 0.3em;
+    background: #444;
+    font-size: 0.8em;
+    color: white;
+    margin: 0.1em;
+    display: inline-block;
+    cursor: pointer;
+  }

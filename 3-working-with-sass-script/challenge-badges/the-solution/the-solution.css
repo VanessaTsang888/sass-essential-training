@@ -1,0 +1,8 @@
+/* 
+
+This is the scss code complied to css code. 
+This css code is a lot longer (repeating code) compared to scss code which makes it not as efficient as writing scss code. 
+This go against the DRY (Do Not Repeat Yourself) principle which is best practice in software engineering. However, browsers 
+can't work or complie scss code. This is why we are using SASS language to write scss code or syntax.
+
+*/

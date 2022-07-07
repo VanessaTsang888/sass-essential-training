@@ -1,0 +1,65 @@
+// The solution scss code used to create a mixin that generates three buttons.
+
+/*
+
+This code uses the following SASS features or concepts to create the badges:
+
+- maps:
+Use maps to create a set of color options for the badges.
+
+- hover color:
+Use a hover color that uses SASS color functions.
+
+- conditionals:
+Use conditionals that allow for a version of the bedges that is more rounded. We'll call these pills.
+
+- each at-rule:
+Use the each statement to navigate through the maps and create the badge styles.
+
+*/
+
+@use "sass:map";
+@use "sass:color";
+
+$badges: (
+  "-primary": (
+    RoyalBlue,
+    White
+  ),
+  "-danger": (
+    Crimson,
+    White
+  ),
+  "-info": (
+    Cyan,
+    Black
+  )
+);
+
+@mixin badge($name: "", $bg: #444, $col: white, $style: null) {
+  .badge#{$name} {
+    border: 0;
+    @if $style == "pill" {
+      border-radius: 30px !important;
+      padding: 0 0.6em !important;
+    } @else {
+      border-radius: 5px;
+      padding: 0 0.3em;
+    }
+    background: $bg;
+    font-size: 0.8em;
+    color: $col;
+    margin: 0.1em;
+    display: inline-block;
+    cursor: pointer;
+    &:hover {
+      background: color.scale($bg, $lightness: -30%);
+    }
+  }
+}
+
+@include badge("");
+@include badge("-pill", $style: "pill");
+@each $key, $values in $badges {
+  @include badge($key, $values...);
+}
