@@ -1,7 +1,7 @@
-// The solution scss code used to create a mixin that generates three buttons.
 
-/*
+/******************************************************************************************************
 
+The solution scss code used to create a mixin that generates three buttons.
 This code uses the following SASS features or concepts to create the badges:
 
 - maps:
@@ -16,7 +16,7 @@ Use conditionals that allow for a version of the bedges that is more rounded. We
 - each at-rule:
 Use the each statement to navigate through the maps and create the badge styles.
 
-*/
+**********************************************************************************************************/
 
  /* 
     Import modules so I can use the maps and color function sass features in this challenge to develop 
